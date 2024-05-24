@@ -13,7 +13,7 @@ app = Dash(__name__, external_stylesheets=[dbc.themes.FLATLY])
 server = app.server 
 
 # Enable Whitenoise for serving static files from Heroku (the /static folder is seen as root by Heroku) 
-server.wsgi_app = WhiteNoise(server.wsgi_app, root='static/') 
+#server.wsgi_app = WhiteNoise(server.wsgi_app, root='static/') 
 
 # Define Dash layout
 def create_dash_layout(app):
@@ -39,4 +39,4 @@ def create_dash_layout(app):
 create_dash_layout(app)
 
 # Run flask app
-if __name__ == "__main__": app.run_server(debug=False, host='0.0.0.0', port=8050)
+if __name__ == "__main__": app.run_server(debug=True, host='0.0.0.0', port=8050)
